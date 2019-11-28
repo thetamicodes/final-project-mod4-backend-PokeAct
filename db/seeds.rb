@@ -13,3 +13,7 @@ g1 = Game.create(score: 100, player_id: p1.id)
 c1 = Card.create(img_url: "Example")
 
 j1 = GameCard.create(game_id: g1.id, card_id: c1.id)
+
+
+# p1.games
+# p1.games[0].cards
