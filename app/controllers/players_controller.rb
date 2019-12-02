@@ -13,7 +13,6 @@ class PlayersController < ApplicationController
     def create
         player = Player.create(player_params)
         render json: player, status: :created
-        debugger
     end
 
     private 
