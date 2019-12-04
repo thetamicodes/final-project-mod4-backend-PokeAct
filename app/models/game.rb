@@ -6,8 +6,8 @@ class Game < ApplicationRecord
   def self.highscores_with_names
     allScores = Game.all.map { |game| {username: game.player.username, score: game.score} }
     namesUniq = allScores.sort_by{|hsh| hsh[:score]}.reverse
-    namesUniq.uniq
-
+    onlyFirstTen = namesUniq.uniq
+    onlyFirstTen[0..9]
     
   end
 
