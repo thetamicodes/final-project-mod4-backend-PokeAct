@@ -4,9 +4,13 @@ class Game < ApplicationRecord
   has_many :cards, through: :game_cards
 
   def self.highscores_with_names
-    Game.all.map {|game| 
-      {username: game.player.username, score: game.score}
-    }
+    allScores = Game.all.map { |game| {username: game.player.username, score: game.score} }
+    namesUniq = allScores.sort_by{|hsh| hsh[:score]}.reverse
+    namesUniq.uniq
+
+    
   end
 
 end
+
+
